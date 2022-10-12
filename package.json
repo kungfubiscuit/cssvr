@@ -20,10 +20,6 @@
     "gulp-replace": "^0.6.1",
     "gulp4-run-sequence": "^1.0.0",
     "rollup-stream": "^1.23.1",
-    "vinyl-source-stream": "^1.1.0"
-  },
-  "dependencies": {
-    "anymatch": "^3.1.2",
-    "vinyl": "^3.0.0"
+    "vinyl-source-stream": "^2.0.0"
   }
 }
