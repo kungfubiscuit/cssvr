@@ -3,9 +3,9 @@ const rollup = require('rollup-stream');
 const source = require('vinyl-source-stream');
 const replace = require('gulp-replace');
 const cleancss = require('gulp-clean-css');
-const babili = require("gulp-babili");
+const babili = require("gulp-babel-minify");
 const rename = require("gulp-rename");
-const runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 const del = require('del');
 const package = require('./package.json');
 
@@ -31,9 +31,9 @@ gulp.task('inlinecss', function() {
 
 gulp.task('bundlejs', function() {
   return rollup({
-    entry: './src/js/vr.js',
+    input: './src/js/vr.js',
     format: 'iife',
-    moduleName: 'CSSVR',
+    name: 'CSSVR',
   })
   .pipe(source('cssvr-nocss.js'))
   .pipe(gulp.dest('./build'))
